@@ -1,2 +1,32 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.banner{
+  background-image: url("https://images.unsplash.com/photo-1485095329183-d0797cdc5676?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1770&q=80"), linear-gradient(#ccc7ca, #838080);
+  height: 500px;
+  width: 1500px;
+  background-size: cover;
+  color: antiquewhite;
+  justify-self: center;
+  background-position: left;
+}
+
+h1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  ;
+}
+
+.d-flex {
+  justify-content: space-evenly;
+}
+
+.banner-group {
+  text-decoration: none !important
+}
+
+.card {
+  margin-top: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+}

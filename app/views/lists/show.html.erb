@@ -2,8 +2,10 @@
 <br>
 <ul class="list-group">
   <% @list.bookmarks.each do |bookmark| %>
+
     <li class="list-group-item"><%= bookmark.comment %></li>
   <% end %>
 </ul>
+    <%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
 
   <%= link_to "Back to lists list", lists_path %>

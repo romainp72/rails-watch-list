@@ -1,13 +1,25 @@
 
-
-<h1>My movies Lists</h1>
-
-<ul>
-  <% @lists.each do |list| %>
-    <li><%= link_to list.name, list_path(list) %></li>
-  <% end %>
-</ul>
-
-  <%= link_to 'New list', new_list_path %>
-<br>
-  <%= link_to 'Add a bookmark', new_bookmark_path %>
+<div class="banner d-flex align-items-center justify-content-center flex-column">
+  <h1><strong>My movies Lists</strong></h1>
+    <div class="banner-group">
+      <button type="button" class="btn btn-primary"><%= link_to 'New list', new_list_path %></button>
+      <button type="button" class="btn btn-primary"><%= link_to 'Add a bookmark', new_bookmark_path %></button>
+    </div>
+</div>
+<div>
+  <ul class="d-flex align-content-between flex-wrap">
+    <% @lists.each do |list| %>
+      <div class="card" style="width: 18rem;">
+        <% if list.photo.attached?  %>
+          <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fit %>
+        <% else %>
+        <img src="https://images.unsplash.com/photo-1597602379055-e7afd27c39ee?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1771&q=80" alt="nope" width="100%">
+        <% end %>
+        <div class="card-body">
+          <h5 class="card-title"><%=list.name%></h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+    <% end %>
+  </ul>
+</div>
