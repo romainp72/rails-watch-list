@@ -17,7 +17,7 @@ payload = JSON.parse(response)
 
 puts "let's add new movies"
 
-payload["results"].last(5).each do |result|
+payload["results"].first(15).each do |result|
   Movie.create!(
     title: result["title"],
     overview: result["overview"],
