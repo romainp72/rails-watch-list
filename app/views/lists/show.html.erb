@@ -1,0 +1,9 @@
+<h2><%= @list.name %></h2>
+<br>
+<ul class="list-group">
+  <% @list.bookmarks.each do |bookmark| %>
+    <li class="list-group-item"><%= bookmark.comment %></li>
+  <% end %>
+</ul>
+
+  <%= link_to "Back to lists list", lists_path %>
