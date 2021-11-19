@@ -8,10 +8,11 @@ require "rest-client"
 # Movie.create(title: "Ocean's Eight", overview: "Debbie Ocean, a criminal mastermind, gathers a crew of female thieves to pull off the heist of the century.", poster_url: "https://image.tmdb.org/t/p/original/MvYpKlpFukTivnlBhizGbkAe3v.jpg", rating: 7.0)
 
 
+
 response = RestClient.get "http://tmdb.lewagon.com/movie/top_rated"
 payload = JSON.parse(response)
 
-payload["results"].last(10).each do |result|
+payload["results"].first(15).each do |result|
   Movie.create!(
     title: result["title"],
     overview: result["overview"],
